@@ -3,36 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#0b4f71">
+  <meta name="theme-color" content="#0b5f8a">
   <meta name="description" content="LAJUNUSA — pesan perjalanan, pilih kursi, dan booking dengan mudah.">
   <title>LAJUNUSA — Transport & Booking</title>
-  <link rel="stylesheet" href="style.css?v=1.10">
+  <link rel="stylesheet" href="style.css?v=1.11">
 </head>
 <body>
   <header class="topbar">
     <div class="brand">
-      <div class="brand-mark">LN</div>
-      <div>
-        <h1>LAJUNUSA</h1>
-        <span>Transport &amp; Booking</span>
+      <div class="brand-mark" aria-label="Logo LAJUNUSA">
+        <svg viewBox="0 0 72 56" role="img" aria-hidden="true">
+          <path d="M8 42c10-2 18-8 24-18 4-7 9-13 18-17" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+          <path d="M13 45h45" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+          <path d="M31 35c8-5 13-11 17-20" fill="none" stroke="#18b7a0" stroke-width="7" stroke-linecap="round"/>
+          <path d="M43 12l11 1-7 8" fill="none" stroke="#18b7a0" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </div>
+      <div><h1>LAJUNUSA</h1><span>Transport &amp; Booking</span></div>
     </div>
   </header>
 
   <main class="container">
     <section class="hero">
-      <div>
-        <p class="eyebrow">PERJALANAN ANTARKOTA</p>
-        <h2>Pesan perjalanan. Pilih kursi. Berangkat nyaman.</h2>
-        <p class="hero-copy">Cari jadwal, pilih kursi favorit, dan booking perjalanan langsung dari HP.</p>
-      </div>
-      <div class="hero-badges" aria-label="Keunggulan">
-        <span>💺 Pilih Kursi</span><span>🔒 Seat Lock</span><span>🎫 E-Ticket</span>
-      </div>
+      <div><p class="eyebrow">PERJALANAN ANTARKOTA</p><h2>Pesan perjalanan. Pilih kursi. Berangkat nyaman.</h2><p class="hero-copy">Cari jadwal, pilih kursi favorit, dan booking perjalanan langsung dari HP.</p></div>
+      <div class="hero-badges" aria-label="Keunggulan"><span>💺 Pilih Kursi</span><span>🔒 Seat Lock</span><span>🎫 E-Ticket</span></div>
     </section>
 
     <section class="card search-card">
-      <div class="search-heading"><div><p class="eyebrow">MULAI PERJALANAN</p><h3>Cari Perjalanan</h3></div><span class="step-pill">1</span></div>
+      <div class="search-heading"><div><p class="eyebrow">MULAI PERJALANAN</p><h3>Mau pergi ke mana?</h3></div><span class="step-pill">1</span></div>
       <div class="form-grid">
         <label><span>Dari</span><select id="origin"><option value="">Memuat...</option></select></label>
         <label><span>Ke</span><select id="destination"><option value="">Memuat...</option></select></label>
@@ -42,40 +40,20 @@
       <div id="searchMessage" class="message"></div>
     </section>
 
-    <section id="resultsSection" class="card hidden">
-      <div class="section-head"><div><p class="eyebrow">PILIH JADWAL</p><h3>Jadwal Tersedia</h3></div><span id="resultCount"></span></div>
-      <div id="results"></div>
-    </section>
+    <section id="resultsSection" class="card hidden"><div class="section-head"><div><p class="eyebrow">PILIH JADWAL</p><h3>Jadwal Tersedia</h3></div><span id="resultCount"></span></div><div id="results"></div></section>
 
     <section id="bookingSection" class="card hidden">
       <div class="section-head"><div><p class="eyebrow">PILIH KURSI</p><h3>Atur Tempat Duduk</h3></div><span id="selectedTrip"></span></div>
       <div class="seat-status-line"><span id="seatAvailability">Memuat kursi...</span><span>🔄 otomatis diperbarui</span></div>
-      <div id="seatLegend" class="legend">
-        <span><i class="seat available"></i> Tersedia</span><span><i class="seat selected"></i> Dipilih</span><span><i class="seat held"></i> Dikunci</span><span><i class="seat booked"></i> Terisi</span>
-      </div>
-      <div id="seatGrid" class="seat-grid"></div>
-      <div class="hold-countdown" id="holdCountdown"></div>
+      <div id="seatLegend" class="legend"><span><i class="seat available"></i> Tersedia</span><span><i class="seat selected"></i> Dipilih</span><span><i class="seat held"></i> Dikunci</span><span><i class="seat booked"></i> Terisi</span></div>
+      <div id="seatGrid" class="seat-grid"></div><div class="hold-countdown" id="holdCountdown"></div>
       <div class="booking-summary"><div>Kursi <strong id="selectedSeatText">-</strong></div><div>Total <strong id="priceText">Rp0</strong></div></div>
-      <div class="passenger-form">
-        <label><span>Nama Penumpang</span><input id="passengerName" type="text" placeholder="Nama lengkap" autocomplete="name"></label>
-        <label><span>Nomor WhatsApp</span><input id="passengerPhone" type="tel" placeholder="08xxxxxxxxxx" autocomplete="tel"></label>
-        <button id="bookBtn" class="primary" disabled>Buat Booking <span>→</span></button>
-        <div id="bookingMessage" class="message"></div>
-      </div>
+      <div class="passenger-form"><label><span>Nama Penumpang</span><input id="passengerName" type="text" placeholder="Nama lengkap" autocomplete="name"></label><label><span>Nomor WhatsApp</span><input id="passengerPhone" type="tel" placeholder="08xxxxxxxxxx" autocomplete="tel"></label><button id="bookBtn" class="primary" disabled>Buat Booking <span>→</span></button><div id="bookingMessage" class="message"></div></div>
     </section>
 
-    <section id="ticketSection" class="ticket hidden">
-      <div class="ticket-top"><div><p class="eyebrow">E-TICKET</p><strong>LAJUNUSA</strong></div><span class="ticket-check">✓</span></div>
-      <div class="ticket-code" id="ticketCode">-</div>
-      <div class="ticket-grid">
-        <div><small>Penumpang</small><strong id="ticketName">-</strong></div><div><small>WhatsApp</small><strong id="ticketPhone">-</strong></div><div><small>Perjalanan</small><strong id="ticketRoute">-</strong></div><div><small>Jadwal</small><strong id="ticketSchedule">-</strong></div><div><small>Armada</small><strong id="ticketBus">-</strong></div><div><small>Kursi</small><strong id="ticketSeat">-</strong></div><div><small>Total</small><strong id="ticketPrice">-</strong></div>
-      </div>
-      <button id="newBookingBtn" class="secondary">Booking Baru</button>
-    </section>
+    <section id="ticketSection" class="ticket hidden"><div class="ticket-top"><div><p class="eyebrow">E-TICKET</p><strong>LAJUNUSA</strong></div><span class="ticket-check">✓</span></div><div class="ticket-code" id="ticketCode">-</div><div class="ticket-grid"><div><small>Penumpang</small><strong id="ticketName">-</strong></div><div><small>WhatsApp</small><strong id="ticketPhone">-</strong></div><div><small>Perjalanan</small><strong id="ticketRoute">-</strong></div><div><small>Jadwal</small><strong id="ticketSchedule">-</strong></div><div><small>Armada</small><strong id="ticketBus">-</strong></div><div><small>Kursi</small><strong id="ticketSeat">-</strong></div><div><small>Total</small><strong id="ticketPrice">-</strong></div></div><button id="newBookingBtn" class="secondary">Booking Baru</button></section>
   </main>
-
   <footer>© 2026 LAJUNUSA · Transport &amp; Booking</footer>
-  <script src="supabase-config.js"></script>
-  <script src="app.js"></script>
+  <script src="supabase-config.js"></script><script src="app.js"></script>
 </body>
 </html>
