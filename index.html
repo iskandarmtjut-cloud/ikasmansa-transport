@@ -2,17 +2,19 @@
 <html lang="id">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>IKA SMANSA TRANSPORT</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b4f71">
+  <meta name="description" content="LAJUNUSA — pesan perjalanan, pilih kursi, dan booking dengan mudah.">
+  <title>LAJUNUSA — Transport & Booking</title>
+  <link rel="stylesheet" href="style.css?v=1.10">
 </head>
 <body>
   <header class="topbar">
     <div class="brand">
-      <div class="brand-mark">IS</div>
+      <div class="brand-mark">LN</div>
       <div>
-        <h1>IKA SMANSA TRANSPORT</h1>
-        <span>Perjalanan Aceh • Nyaman • Aman • Terpercaya</span>
+        <h1>LAJUNUSA</h1>
+        <span>Transport &amp; Booking</span>
       </div>
     </div>
   </header>
@@ -20,88 +22,59 @@
   <main class="container">
     <section class="hero">
       <div>
-        <p class="eyebrow">BUS ANTAR KOTA / ANTAR PROVINSI</p>
-        <h2>Pesan perjalanan Anda dengan mudah.</h2>
-        <p class="hero-copy">Cari jadwal, pilih armada dan kursi, lalu buat booking langsung dari aplikasi.</p>
+        <p class="eyebrow">PERJALANAN ANTARKOTA</p>
+        <h2>Pesan perjalanan. Pilih kursi. Berangkat nyaman.</h2>
+        <p class="hero-copy">Cari jadwal, pilih kursi favorit, dan booking perjalanan langsung dari HP.</p>
+      </div>
+      <div class="hero-badges" aria-label="Keunggulan">
+        <span>💺 Pilih Kursi</span><span>🔒 Seat Lock</span><span>🎫 E-Ticket</span>
       </div>
     </section>
 
     <section class="card search-card">
-      <h3>Cari Perjalanan</h3>
+      <div class="search-heading"><div><p class="eyebrow">MULAI PERJALANAN</p><h3>Cari Perjalanan</h3></div><span class="step-pill">1</span></div>
       <div class="form-grid">
-        <label>Dari
-          <select id="origin"><option value="">Memuat...</option></select>
-        </label>
-        <label>Ke
-          <select id="destination"><option value="">Memuat...</option></select>
-        </label>
-        <label>Tanggal
-          <input id="travelDate" type="date">
-        </label>
+        <label><span>Dari</span><select id="origin"><option value="">Memuat...</option></select></label>
+        <label><span>Ke</span><select id="destination"><option value="">Memuat...</option></select></label>
+        <label><span>Tanggal</span><input id="travelDate" type="date"></label>
       </div>
-      <button id="searchBtn" class="primary">Cari Perjalanan</button>
+      <button id="searchBtn" class="primary">Cari Perjalanan <span>→</span></button>
       <div id="searchMessage" class="message"></div>
     </section>
 
     <section id="resultsSection" class="card hidden">
-      <div class="section-head">
-        <h3>Jadwal Tersedia</h3>
-        <span id="resultCount"></span>
-      </div>
+      <div class="section-head"><div><p class="eyebrow">PILIH JADWAL</p><h3>Jadwal Tersedia</h3></div><span id="resultCount"></span></div>
       <div id="results"></div>
     </section>
 
     <section id="bookingSection" class="card hidden">
-      <div class="section-head">
-        <h3>Pilih Kursi</h3>
-        <span id="selectedTrip"></span>
-      </div>
+      <div class="section-head"><div><p class="eyebrow">PILIH KURSI</p><h3>Atur Tempat Duduk</h3></div><span id="selectedTrip"></span></div>
       <div class="seat-status-line"><span id="seatAvailability">Memuat kursi...</span><span>🔄 otomatis diperbarui</span></div>
       <div id="seatLegend" class="legend">
-        <span><i class="seat available"></i> Tersedia</span>
-        <span><i class="seat selected"></i> Dipilih</span>
-        <span><i class="seat held"></i> Dikunci</span>
-        <span><i class="seat booked"></i> Terisi</span>
+        <span><i class="seat available"></i> Tersedia</span><span><i class="seat selected"></i> Dipilih</span><span><i class="seat held"></i> Dikunci</span><span><i class="seat booked"></i> Terisi</span>
       </div>
       <div id="seatGrid" class="seat-grid"></div>
       <div class="hold-countdown" id="holdCountdown"></div>
-      <div class="booking-summary">
-        <div>Kursi: <strong id="selectedSeatText">-</strong></div>
-        <div>Total: <strong id="priceText">Rp0</strong></div>
-      </div>
-
+      <div class="booking-summary"><div>Kursi <strong id="selectedSeatText">-</strong></div><div>Total <strong id="priceText">Rp0</strong></div></div>
       <div class="passenger-form">
-        <label>Nama Penumpang
-          <input id="passengerName" type="text" placeholder="Nama lengkap">
-        </label>
-        <label>Nomor WhatsApp
-          <input id="passengerPhone" type="tel" placeholder="08xxxxxxxxxx">
-        </label>
-        <button id="bookBtn" class="primary" disabled>Buat Booking</button>
+        <label><span>Nama Penumpang</span><input id="passengerName" type="text" placeholder="Nama lengkap" autocomplete="name"></label>
+        <label><span>Nomor WhatsApp</span><input id="passengerPhone" type="tel" placeholder="08xxxxxxxxxx" autocomplete="tel"></label>
+        <button id="bookBtn" class="primary" disabled>Buat Booking <span>→</span></button>
         <div id="bookingMessage" class="message"></div>
       </div>
     </section>
 
     <section id="ticketSection" class="ticket hidden">
-      <div class="ticket-top">
-        <span class="eyebrow">E-TICKET</span>
-        <strong>IKA SMANSA TRANSPORT</strong>
-      </div>
+      <div class="ticket-top"><div><p class="eyebrow">E-TICKET</p><strong>LAJUNUSA</strong></div><span class="ticket-check">✓</span></div>
       <div class="ticket-code" id="ticketCode">-</div>
       <div class="ticket-grid">
-        <div><small>Penumpang</small><strong id="ticketName">-</strong></div>
-        <div><small>WhatsApp</small><strong id="ticketPhone">-</strong></div>
-        <div><small>Perjalanan</small><strong id="ticketRoute">-</strong></div>
-        <div><small>Jadwal</small><strong id="ticketSchedule">-</strong></div>
-        <div><small>Armada</small><strong id="ticketBus">-</strong></div>
-        <div><small>Kursi</small><strong id="ticketSeat">-</strong></div>
-        <div><small>Total</small><strong id="ticketPrice">-</strong></div>
+        <div><small>Penumpang</small><strong id="ticketName">-</strong></div><div><small>WhatsApp</small><strong id="ticketPhone">-</strong></div><div><small>Perjalanan</small><strong id="ticketRoute">-</strong></div><div><small>Jadwal</small><strong id="ticketSchedule">-</strong></div><div><small>Armada</small><strong id="ticketBus">-</strong></div><div><small>Kursi</small><strong id="ticketSeat">-</strong></div><div><small>Total</small><strong id="ticketPrice">-</strong></div>
       </div>
       <button id="newBookingBtn" class="secondary">Booking Baru</button>
     </section>
   </main>
 
-  <footer>© 2026 IKA SMANSA TRANSPORT</footer>
+  <footer>© 2026 LAJUNUSA · Transport &amp; Booking</footer>
   <script src="supabase-config.js"></script>
   <script src="app.js"></script>
 </body>
